@@ -5,6 +5,9 @@ name: Create Feedback
 on: [push]
 permissions:
   pull-requests: write
+  checks: write
+  actions: read
+  contents: read
 jobs:
   create-feedback:
     runs-on: ubuntu-latest
