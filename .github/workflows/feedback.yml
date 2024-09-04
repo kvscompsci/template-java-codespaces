@@ -23,11 +23,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: GuillaumeFalourd/pull-request-action@eof
         with:
-          source_branch: 'main'
-          destination_branch: 'feedback'
-          pr_title: 'Feedback'
-          pr_body: 'Does this work with single line'
-          pr_allow_empty: true
-          pr_draft: false
+          source_branch: "main"
+          destination_branch: "feedback"
+          # pr_title: 'Feedback'
+          # pr_body: 'Does this work with single line'
+          # pr_allow_empty: true
+          # pr_draft: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
