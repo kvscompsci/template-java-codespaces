@@ -9,6 +9,7 @@ jobs:
   create-feedback:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - uses: GuillaumeFalourd/pull-request-action@v2
       with:
         source_branch: main
