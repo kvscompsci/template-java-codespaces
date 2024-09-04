@@ -1,4 +1,10 @@
 {
     "editor.parameterHints.enabled": false,
-    "editor.inlayHints.enabled": "off"
+    "editor.inlayHints.enabled": "off",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "libs/junit-4.13.2.jar",
+        "libs/hamcrest-core-1.3.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true,
 }
