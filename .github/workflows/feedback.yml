@@ -14,12 +14,13 @@ jobs:
         source_branch: main
         destination_branch: feedback
         pr_title: Feedback
-        pr_body: |-
-          **Feedback**
+        pr_body: Check with just a single line?
+        # pr_body: |-
+        #   **Feedback**
 
-          This feedback PR was automatically created in your repository so that we have a spot to discuss your code. **Do not merge or close this PR.**
+        #   This feedback PR was automatically created in your repository so that we have a spot to discuss your code. **Do not merge or close this PR.**
 
-          You can click on the **Files Changed** and **Commits** tabs to see the changes, and all of this can be seen by both you and your teacher. 
+        #   You can click on the **Files Changed** and **Commits** tabs to see the changes, and all of this can be seen by both you and your teacher. 
         pr_allow_empty: true
         pr_draft: false
       env:
