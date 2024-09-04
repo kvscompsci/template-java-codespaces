@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add Feedback PR
+        uses: actions/checkout@v4
         run: |
           gh pr create --base main --head feedback --title "Feedback" --body "This feedback PR was automatically created in your repository so that we have a spot to discuss your code. **Do not merge or close this PR.**"
         env:
