@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Add Feedback PR
         run: |
+          git branch feedback
           gh pr create --base main --head feedback --title "Feedback" --body "This feedback PR was automatically created in your repository so that we have a spot to discuss your code. **Do not merge or close this PR.**"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
