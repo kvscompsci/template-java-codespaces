@@ -26,12 +26,7 @@ jobs:
           source_branch: main
           destination_branch: feedback
           pr_title: Feedback
-          pr_body: |-
-            **Feedback**
-
-            This feedback PR was automatically created in your repository so that we have a spot to discuss your code. **Do not merge or close this PR.**
-
-            You can click on the **Files Changed** and **Commits** tabs to see the changes, and all of this can be seen by both you and your teacher. 
+          pr_body: Does this work with single line?
           pr_allow_empty: true
           pr_draft: false
         env:
