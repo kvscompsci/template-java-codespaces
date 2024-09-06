@@ -82,7 +82,7 @@ jobs:
         uses: markpatterson27/points-bar@v1
         if: success() || failure()
         with:
-          points: ${{ steps.autograding-reporter.outputs.points }}
+          points: ${{ steps.autograding-reporter.outputs.Points }}
           path: .github/badges/points-badge.svg
           type: badge
           label: Autograding
