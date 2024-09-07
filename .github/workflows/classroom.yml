@@ -26,7 +26,7 @@ jobs:
       
       
       # Tests go here, see below for examples
-      # Use either compscirocks/autograding-junit4@v1 or compscirocks/autograding-junit5@v1
+      # Use either compscirocks/autograding-junit4@v1 or compscirocks/autograding-junit4@v1
       
       ## Examples, probably should delete these
       - name: Test - Unit Test
