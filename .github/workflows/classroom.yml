@@ -18,7 +18,6 @@ permissions:
   contents: write
 jobs:
   run-autograding-tests:
-    name: Run Autograding Tests
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
     steps:
@@ -68,7 +67,7 @@ jobs:
         uses: compscirocks/autograding-grading-reporter@v1
         env:
           # These need to match the test ids above so that it's reported correctly. These
-          # two match the examples below. 
+          # two match the examples below. It's all caps test-id, underscore, RESULTS
           UNIT-TEST-EXAMPLE_RESULTS: "${{steps.unit-test-example.outputs.result}}"
           OUTPUT-TEST-EXAMPLE_RESULTS: "${{steps.output-test-example.outputs.result}}"
         with:
@@ -82,7 +81,7 @@ jobs:
         uses: markpatterson27/points-bar@v1
         if: success() || failure()
         with:
-          points: ${{ steps.autograding-reporter.outputs.Points }}
+          points: ${{ env.POINTS_STRING || '0/100'}}
           path: .github/badges/points-badge.svg
           type: badge
           label: Autograding
