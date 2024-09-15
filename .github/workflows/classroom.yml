@@ -16,6 +16,8 @@ permissions:
   checks: write
   actions: read
   contents: write
+  issues: write
+  pull-requests: write
 jobs:
   run-autograding-tests:
     runs-on: ubuntu-latest
@@ -26,12 +28,12 @@ jobs:
       
       
       # Tests go here, see below for examples
-      # Use either compscirocks/autograding-junit4@v1 or compscirocks/autograding-junit4@v1
+      # Use either compscirocks/autograding-junit4@main or compscirocks/autograding-junit4@main
       
       ## Examples, probably should delete these
       - name: Test - Unit Test
         id: unit-test-example
-        uses: compscirocks/autograding-junit4@v1
+        uses: compscirocks/autograding-junit4@main
         with:
           test-name: Test - Unit Test
           test-class: Test_ClassName
@@ -40,7 +42,7 @@ jobs:
           max-score: 50
       - name: Test - Output
         id: output-test-example
-        uses: compscirocks/autograding-io-grader@v1
+        uses: compscirocks/autograding-io-grader@main
         with:
           test-name: Test - Output
           setup-command: javac ClassToRun.java
@@ -64,7 +66,7 @@ jobs:
 
       - name: Autograding Reporter
         id: autograding-reporter
-        uses: compscirocks/autograding-grading-reporter@v1
+        uses: compscirocks/autograding-grading-reporter@main
         env:
           # These need to match the test ids above so that it's reported correctly. These
           # two match the examples below. It's all caps test-id, underscore, RESULTS
@@ -73,28 +75,6 @@ jobs:
         with:
           # Match the test ids above, comma separated
           runners: unit-test-example,output-test-example
-
-      - name: Checkout badge branch
-        if: success() || failure()
-        run: git checkout badges || git checkout -b badges
-      - name: Create Points Badge
-        uses: markpatterson27/points-bar@v1
-        if: success() || failure()
-        with:
-          points: ${{ env.POINTS_STRING || '0/100'}}
-          path: .github/badges/points-badge.svg
-          type: badge
-          label: Autograding
-      - name: Commit Badge
-        if: success() || failure()
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add '.github/badges/points-badge.svg'
-          git commit -m "Add/Update points bar" || exit 0
-          git push origin badges -f
-
-
 
 
        
